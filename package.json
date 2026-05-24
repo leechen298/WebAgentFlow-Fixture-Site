@@ -1,0 +1,19 @@
+{
+  "name": "web-agent-flow-fixture-site",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.12.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c yellow,cyan \"pnpm run dev:api\" \"pnpm run dev:web\"",
+    "dev:web": "pnpm --dir web dev",
+    "dev:api": "cd server && ${PYTHON:-.venv/bin/python} -m uvicorn app.main:app --reload --host 127.0.0.1 --port ${FIXTURE_API_PORT:-8002}",
+    "build": "pnpm --dir web build",
+    "preview": "pnpm --dir web preview"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
