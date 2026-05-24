@@ -59,3 +59,26 @@ It may contain:
 - deterministic local backend behavior
 
 It is not a product-like black-box validation site.
+
+## Scenario Documentation
+
+Current fixture scenario index:
+
+```text
+docs/FIXTURE_SCENARIOS.md
+```
+
+Source runtime scenario catalog:
+
+```text
+docs/testing/scenarios/realistic-web-runtime-cases.md
+```
+
+Historical planning and review documents:
+
+```text
+docs/source/webagentflow-m11/
+```
+
+Historical source docs may mention old monorepo paths. They are preserved as source context and
+do not redefine this repository's current layout or runtime contract.

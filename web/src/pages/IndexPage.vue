@@ -37,7 +37,7 @@
               <dd>
                 <code>{{ page.specId }}</code>
                 <span class="hint">
-                  — {{ t('index.meta.seeSpec', { path: `apps/validation-site/specs/${page.specId}.md` }) }}
+                  — {{ t('index.meta.seeSpec', { path: `web/specs/${page.specId}.md` }) }}
                 </span>
               </dd>
             </div>

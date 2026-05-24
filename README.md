@@ -54,6 +54,17 @@ pnpm build
 
 See `FIXTURE_CONTRACT.md`.
 
+## Fixture Scenarios
+
+See `docs/FIXTURE_SCENARIOS.md` for the current specs, implemented basic fixtures,
+planned fixture families, and source scenario catalog.
+
 ## Migration Source
 
 See `MIGRATION_SOURCE.md`.
+
+## Source Planning Docs
+
+Historical planning and review documents copied from WebAgentFlow are kept under
+`docs/source/`. They preserve original monorepo paths as source context. They are
+not current runtime instructions for this repository.
