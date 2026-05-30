@@ -44,6 +44,16 @@ Open:
 http://127.0.0.1:5175
 ```
 
+## Tests
+
+The selector stability smoke reads Vue source files directly. It does not
+require the dev server or fixture API to be running.
+
+```bash
+pnpm test
+pnpm run test:selectors
+```
+
 ## Build
 
 ```bash
