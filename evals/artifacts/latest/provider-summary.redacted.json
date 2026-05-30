@@ -1,0 +1,46 @@
+{
+  "schema_version": "waf.eval.result.v1",
+  "status": "PASS",
+  "generated_at": "2026-05-30T12:40:57.816Z",
+  "provider": {
+    "kind": "fixture_site",
+    "name": "WebAgentFlow-Fixture-Site",
+    "version": "0.1.0"
+  },
+  "target": {
+    "target_ref": "fixture-site-provider",
+    "redacted": true
+  },
+  "operator_actions": [
+    {
+      "surface": "external_provider",
+      "action": "write_redacted_provider_summary",
+      "command": "provider-full",
+      "timestamp": "2026-05-30T12:40:57.817Z"
+    }
+  ],
+  "case_results": [
+    {
+      "case_id": "fixture-provider-selector-stability",
+      "status": "PASS",
+      "summary": "Provider-owned selector stability gate for fixture pages."
+    },
+    {
+      "case_id": "fixture-provider-browser-smoke",
+      "status": "PASS",
+      "summary": "Provider-owned browser smoke gate for fixture scenarios."
+    },
+    {
+      "case_id": "fixture-provider-replay-seed-contract",
+      "status": "PASS",
+      "summary": "Provider-owned replay fixture seeding contract remains outside WebAgentFlow."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evals/artifacts/latest/provider-summary.redacted.json",
+      "kind": "redacted_provider_summary",
+      "redacted": true
+    }
+  ]
+}

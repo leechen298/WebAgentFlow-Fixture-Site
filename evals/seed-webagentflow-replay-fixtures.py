@@ -11,9 +11,29 @@ from __future__ import annotations
 import json
 import os
 import sys
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+
+if __name__ == "__main__" and ("--help" in sys.argv or "-h" in sys.argv):
+    print(
+        "Usage: python3 evals/seed-webagentflow-replay-fixtures.py "
+        "--webagentflow-local-seed\n\n"
+        "This is a local-only legacy integration helper. It writes raw "
+        "Fixture-Site details into a WebAgentFlow developer checkout and is "
+        "not a redacted provider result."
+    )
+    sys.exit(0)
+
+if __name__ == "__main__" and "--webagentflow-local-seed" not in sys.argv:
+    print(
+        "Refusing to write raw Fixture-Site replay details into WebAgentFlow "
+        "without --webagentflow-local-seed. Use eval:provider for the "
+        "redacted provider summary."
+    )
+    sys.exit(2)
+
 
 from sqlalchemy import delete
 
@@ -234,7 +254,7 @@ def main() -> None:
     OUTPUT_PATH.write_text(
         json.dumps(
             {
-                "generated_at": datetime.now(UTC).isoformat(),
+                "generated_at": datetime.now(timezone.utc).isoformat(),
                 "provider": {"kind": "fixture_site", "name": "WebAgentFlow-Fixture-Site"},
                 "fixtures": fixtures,
             },

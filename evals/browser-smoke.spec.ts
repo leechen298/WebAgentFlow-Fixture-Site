@@ -66,3 +66,6 @@ test.describe('Fixture-Site browser smoke', () => {
     await expect(page).toHaveURL(new RegExp(`/users\\?name=${noMatchName}$`));
     await expect(page.locator('.user-table')).toContainText(
       /No users found|未找到匹配的用户|該当するユーザーはいません/,
+    );
+  });
+});

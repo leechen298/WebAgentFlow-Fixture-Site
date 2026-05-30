@@ -13,9 +13,13 @@
     "dev:api": "cd server && ${PYTHON:-.venv/bin/python} -m uvicorn app.main:app --reload --host 127.0.0.1 --port ${FIXTURE_API_PORT:-8002}",
     "build": "pnpm --dir web build",
     "preview": "pnpm --dir web preview",
-    "test:selectors": "node --test web/tests/selector-stability.test.mjs"
+    "test:selectors": "node --test web/tests/selector-stability.test.mjs",
+    "test:browser-smoke": "playwright test evals/browser-smoke.spec.ts",
+    "eval:summary": "node evals/write-redacted-summary.mjs",
+    "eval:provider": "pnpm run test:selectors && pnpm run test:browser-smoke && pnpm run eval:summary -- --status PASS --command-id provider-full"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "concurrently": "^9.2.0"
   }
 }

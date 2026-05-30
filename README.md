@@ -54,6 +54,24 @@ pnpm test
 pnpm run test:selectors
 ```
 
+The browser smoke is provider-owned and requires `pnpm dev` to be running in
+another terminal:
+
+```bash
+pnpm run test:browser-smoke
+```
+
+Provider-owned verification cases and the redacted provider summary contract
+live under `evals/`.
+
+```bash
+pnpm run eval:provider
+```
+
+Only `evals/artifacts/latest/provider-summary.redacted.json` is intended for
+WebAgentFlow consumption. Raw fixture routes, selectors, seed values,
+screenshots, traces, and local replay fixture files stay in this repository.
+
 ## Build
 
 ```bash
